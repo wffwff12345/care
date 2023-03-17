@@ -35,7 +35,6 @@ public class AgedService {
     }
 
     public ResultModel getServeById(UUID id) {
-        Optional<ServeEntity> entity = serveRepository.findById(id);
         return ResultModel.data("test");
     }
 }

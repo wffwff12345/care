@@ -7,7 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import java.util.Date;
 import java.util.UUID;
-@Schema(description="订单信息表")
+@Schema(description="订单主体信息表")
 @Entity
 @Table(name = "care_order_master")
 public class OrderMasterEntity extends UUIDEntity {

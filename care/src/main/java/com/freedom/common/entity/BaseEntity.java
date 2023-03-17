@@ -1,23 +1,28 @@
 package com.freedom.common.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.MappedSuperclass;
-
 import java.util.Date;
 
 // 继承类会将字段添加到表中
 @MappedSuperclass
+@Schema(description="基础信息表")
 public abstract class BaseEntity {
 
+    @Schema(name="创建者")
     @JsonIgnore
     private String createUser;
 
+    @Schema(name="创建时间")
     @JsonIgnore
     private Date createTime;
 
+    @Schema(name="更新者")
     @JsonIgnore
     private String updateUser;
 
+    @Schema(name="更新时间")
     @JsonIgnore
     private Date updateTime;
 

@@ -1,25 +1,31 @@
 package com.freedom.care.entity.crud;
 
 import com.freedom.common.entity.NoNameEntity;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 
 import java.math.BigDecimal;
-
+@Schema(description="服务信息表")
 @Entity
 @Table(name = "care_serve")
 public class ServeEntity extends NoNameEntity {
 
+    @Schema(name="缩略图 ID")
     private String thumbnailId;
 
+    @Schema(name="获取缩略图路径")
     private String getThumbnailPath;
 
+    @Schema(name="价格")
     private BigDecimal price;
 
+    @Schema(name="服务类别编号")
     @NotEmpty
     private String categoryNo;
 
+    @Schema(name="描述")
     private String description;
 
     // region getter and setter

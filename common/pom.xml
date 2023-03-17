@@ -4,7 +4,19 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>common</artifactId>
-	<groupId>com.freedom</groupId>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <groupId>com.freedom</groupId>
 	<version>1.0.0</version>
 	<description>公共库</description>
 

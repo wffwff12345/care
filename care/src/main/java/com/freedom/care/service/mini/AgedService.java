@@ -7,10 +7,7 @@ import com.freedom.common.model.ResultModel;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -35,5 +32,10 @@ public class AgedService {
             list.add(map);
         });
         return ResultModel.data(list);
+    }
+
+    public ResultModel getServeById(UUID id) {
+        Optional<ServeEntity> entity = serveRepository.findById(id);
+        return ResultModel.data("test");
     }
 }

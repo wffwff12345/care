@@ -2,21 +2,30 @@ package com.freedom.care.entity.crud;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.freedom.common.entity.UUIDEntity;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-
 import java.util.Date;
-
+@Schema(description="订单详情信息表")
 @Entity
 @Table(name = "care_order_detail")
 public class OrderDetailEntity extends UUIDEntity {
 
+    @Schema(name="订单编号")
     private String orderNo;
+
+    @Schema(name="用户编号")
     private String userNo;
+
+    @Schema(name="用户姓名")
     private String userName;
+
+    @Schema(name="状态")
     @Column(length = 1)
     private String status;
+
+    @Schema(name="状态时间")
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date statusTime;
 

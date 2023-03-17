@@ -1,0 +1,27 @@
+server:
+  port: 8000
+spring:
+  ############################
+  # jpa 设置
+  ############################
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  ############################
+  # jdbc 设置
+  ############################
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/${MYSQL_DATABASE:mydb}?useSSL=false&autoReconnect=true&allowPublicKeyRetrieval=true
+    username: ${MYSQL_USER:mydb}
+    password: ${MYSQL_PASSWORD:mydb}
+  ############################
+  # data web 设置
+  ############################
+  data:
+    web:
+      pageable:
+        default-page-size: 20000
+        max-page-size: 20000
+freedom:
+  jwt-key: 12345678901234567890123456789012345678901234567890
